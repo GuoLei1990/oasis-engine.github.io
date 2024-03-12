@@ -1,8 +1,9 @@
 ---
-order: 7
+order: 5
 title: Shader Lab
-type: 图形
-label: Graphics
+type: 着色器
+group: 网格
+label: Graphics/Shader
 ---
 
 `ShaderLab` 是专为 Galacean 引擎设计的一种 Shader 语言。相较于以往通过 glsl 编写自定义 Shader 的方式，使用 `ShaderLab` 会更加便捷。例如，它可以通过特定指令来指定渲染管线和设置渲染状态。通过 `SubShader` 和 `Pass` 模块，编写多 Pass Shader 也更加便捷。在 `ShaderLab` 中使用 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 语言编写渲染管线中的顶点(Vertex)和片元(Fragment)着色器程序。
@@ -274,7 +275,9 @@ Pass "PassName" {
 为了方便代码片段复用，ShaderLab 提供了 shader 代码片段注册方法。
 
 ```ts
-shaderLab.registerShaderFragment('common_shader', commonSource);
+import { ShaderFactory } from '@galacean/engine';
+
+ShaderFactory.registerInclude('common_shader', commonSource);
 ```
 
 代码片段注册后通过`include`宏进行代码片段替换
@@ -292,8 +295,8 @@ shaderLab.registerShaderFragment('common_shader', commonSource);
 
 2. 变量赋值语句中当赋值为函数调用返回值的属性时，需要用括弧包含函数调用
 
-   - ❌ `float a3 = texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale).x;`
-   - ✅ `float a3 = (texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale)).x;`
+   - ❌ `float a3 = texture2D(u_texture, (p.xy * 0.4 + um) * u_water_scale).x;`
+   - ✅ `float a3 = (texture2D(u_texture, (p.xy * 0.4 + um) * u_water_scale)).x;`
 
 3. if / for 判断语句后如果只有一行代码，"{}"不能省略
 

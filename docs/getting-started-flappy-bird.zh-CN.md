@@ -4,7 +4,6 @@ title: 像素小鸟
 type: 基础知识
 group: 快速上手
 label: Basics/GettingStarted
-
 ---
 
 > 相信大家对 Flappy Bird 都不陌生，本文简单描述下如何用 Galacean 复刻这个 2D 游戏。
@@ -29,15 +28,15 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 ### 上传资源
 
-回到场景编辑器，点击资源面板上的上传按钮 <img src="https://gw.alipayobjects.com/zos/OasisHub/07b876d3-462b-4a06-a2da-ce68d2932034/image-20231007145111353.png" alt="image-20231007145111353" style="zoom:50%;" />，选择 `Sprite`，此时会唤起操作系统的文件查看器，选中所有 FlappyBird 目录下的图片。上传之后，如下图所示，编辑器为每张图片创建了一个 [Texture](${docs}texture) 资源和 一个 [Sprite](${docs}sprite) 资源（为了和 Texture 资源作区分，Sprite 对象带灰色圆角矩形背景）。在接下来的操作中，我们只需要关心 Sprite 资源。
+回到场景编辑器，点击资源面板上的上传按钮 <img src="https://gw.alipayobjects.com/zos/OasisHub/07b876d3-462b-4a06-a2da-ce68d2932034/image-20231007145111353.png" alt="image-20231007145111353" style="zoom:50%;" />，选择 `Sprite`，此时会唤起操作系统的文件查看器，选中所有 FlappyBird 目录下的图片。上传之后，如下图所示，编辑器为每张图片创建了一个 [Texture](${docs}graphics-texture) 资源和 一个 [Sprite](${docs}graphics-2d-sprite) 资源（为了和 Texture 资源作区分，Sprite 对象带灰色圆角矩形背景）。在接下来的操作中，我们只需要关心 Sprite 资源。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/7f13679f-de18-4621-81b1-5834b5d00bd7/image-20231007145451371.png" alt="image-20231007145451371" style="zoom:50%;" />
 
-到这里，我们已经把资源上传完，但是有洁癖的你看到这散乱的资源可能已经按耐不住整理的冲动了。让我们创建一个文件夹，并重命名为 _Sprites_，把刚上传的资源批量选中后拖到 _Sprites_ 目录中。这样做的目的不仅是让资源面板更加整洁，还为我们下一步创建 [Atlas 图集](${docs}sprite-atlas)资源做好了准备。
+到这里，我们已经把资源上传完，但是有洁癖的你看到这散乱的资源可能已经按耐不住整理的冲动了。让我们创建一个文件夹，并重命名为 _Sprites_，把刚上传的资源批量选中后拖到 _Sprites_ 目录中。这样做的目的不仅是让资源面板更加整洁，还为我们下一步创建 [Atlas 图集](${docs}graphics-2d-spriteAtlas)资源做好了准备。
 
 ### 创建图集
 
-为了达到更好的运行时性能，我们选择把这些 Sprite 资源打包到一个 Atlas 资源。我们点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/16aa674c-1bee-49d7-a516-21c591a4ce36/image-20231007152415467.png" alt="image-20231007152415467" style="zoom:50%;" /> 按钮选择 `Sprite Atlas`，创建后选中它，通过检查器面板上的 `Add to List` 按钮把所有 Sprite 资源都添加到列表中。
+为了达到更好的运行时性能，我们选择把这些 Sprite 资源打包到一个 Atlas 资源。我们点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/16aa674c-1bee-49d7-a516-21c591a4ce36/image-20231007152415467.png" alt="image-20231007152415467" style="zoom:50%;" /> 按钮选择 `Sprite Atlas`，创建后选中它，通过 **[检查器面板](${docs}interface-inspector)** 上的 `Add to List` 按钮把所有 Sprite 资源都添加到列表中。
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*en0JTIdKargAAAAAAAAAAAAADleLAQ/original" alt="image-20231007171348757" style="zoom:50%;" />
 
@@ -49,7 +48,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 ## 搭建场景
 
-搭建 2D 场景就像玩拼图一样充满乐趣。首先，我们试着把游戏背景图从资源面板拖动场景中。不要怕拖的位置不准，只要拖到大概的位置，我们后面可以在检查器面板中精细调整。
+搭建 2D 场景就像玩拼图一样充满乐趣。首先，我们试着把游戏背景图从资源面板拖动场景中。不要怕拖的位置不准，只要拖到大概的位置，我们后面可以在 **[检查器面板](${docs}interface-inspector)** 中精细调整。
 
 ![drag1](https://gw.alipayobjects.com/zos/OasisHub/6cabaeea-cc36-4fe1-8bb5-d7ed8a9a49b7/drag1.gif)
 
@@ -61,7 +60,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 ### 加上小鸟
 
-同样，我们把小鸟的 Sprite（`bird3-spr.png`）也拖到场景中。小鸟“飞”的动画是通过序列帧实现的，详见[帧动画](${docs}editor-frame-animation)。
+同样，我们把小鸟的 Sprite（`bird3-spr.png`）也拖到场景中。小鸟“飞”的动画是通过序列帧实现的，详见[帧动画](${docs}animation-sprite-sheet)。
 
 ### 加上管道
 
@@ -89,17 +88,17 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 1. 在节点树中创建一个节点，命名为 `ground`。
 
-2. 在检查器面板中通过 `Add Component` 按钮添加 `Sprite Renderer` 组件，并且把 `SpriteRenderer DrawMode Info` 属性设置成 `Tiled`，并将宽度设置为 `8.14`
+2. 在 **[检查器面板](${docs}interface-inspector)** 中通过 `Add Component` 按钮添加 `Sprite Renderer` 组件，并且把 `SpriteRenderer DrawMode Info` 属性设置成 `Tiled`，并将宽度设置为 `8.14`
 
    <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*pDBbTp6a78oAAAAAAAAAAAAADleLAQ/original" alt="image-20231007173243980" style="zoom:50%;" />
 
-3. 此时就得到了一个平铺完毕的地面，接下来我们可以通过创建动画片段来让它动起来！详见[动画片段编辑](${docs}editor-animationClip)。
+3. 此时就得到了一个平铺完毕的地面，接下来我们可以通过创建动画片段来让它动起来！详见[动画片段编辑](${docs}animation-clip)。
 
    <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*3d2GSINL_8IAAAAAAAAAAAAADleLAQ/original" />
 
 ### 添加遮罩
 
-添加完地面后发现，左右显示好像穿帮了！对于这种情况，只需要为精灵渲染器增加遮罩就好了，详见[精灵遮罩组件](${docs}editor-sprite-mask)
+添加完地面后发现，左右显示好像穿帮了！对于这种情况，只需要为精灵渲染器增加遮罩就好了，详见[精灵遮罩组件](${docs}graphics-2d-spriteMask)
 
    <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*d_ZBS6zxOjQAAAAAAAAAAAAADleLAQ/original" />
 
@@ -122,7 +121,7 @@ GUI 包括分数显示和重新开始按钮。我们分数（ `0.png`） 和重�
 
 #### 添加碰撞体
 
-碰撞体描述了事物的位姿形态，因此在添加碰撞体时应该尽量贴合物体实际显示的大小。关于碰撞器的使用详见[碰撞器](${docs}editor-collider)，此处演示为小鸟添加碰撞体。
+碰撞体描述了事物的位姿形态，因此在添加碰撞体时应该尽量贴合物体实际显示的大小。关于碰撞器的使用详见[碰撞器](${docs}physics-collider)，此处演示为小鸟添加碰撞体。
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*_szwQL3V1AQAAAAAAAAAAAAADleLAQ/original" />
 
@@ -167,7 +166,7 @@ stateDiagram
     Result --> [*]
 ```
 
-我们枚举了**全局状态**与**切换条件**，可以将它们想象成穿梭在不同实例之间的`信息流`，当小鸟在准备阶段时**按下屏幕**，信息被解析并传递给其他实例对象，此时地面开始播放循环移动动画，水管开始交替出现并消失，`信息流`的传递可以用[事件系统](${docs}event)实现，下面我们简化逻辑，在 `Bird` 中监听屏幕点击事件，一旦点击发生，`Idle` 状态就会切换至 `Flying` ，并且其他实例也会监听到对应状态改变。
+我们枚举了**全局状态**与**切换条件**，可以将它们想象成穿梭在不同实例之间的`信息流`，当小鸟在准备阶段时**按下屏幕**，信息被解析并传递给其他实例对象，此时地面开始播放循环移动动画，水管开始交替出现并消失，`信息流`的传递可以用[事件系统](${docs}script-communication)实现，下面我们简化逻辑，在 `Bird` 中监听屏幕点击事件，一旦点击发生，`Idle` 状态就会切换至 `Flying` ，并且其他实例也会监听到对应状态改变。
 
 ```typescript
 /**
@@ -256,7 +255,7 @@ timeline
      Result : Gui.show()
 ```
 
-经过拆解可以发现，如果我们简单地将动画分类为待机动画，飞行动画与坠落动画，考虑到待机的时候要播放精灵切换和上下缓动的动画，飞行的时候也需要播放精灵切换与抬头坠落的动画，他们重合的部分不仅会增加动画编辑时的工作量，还需要额外考虑这两个动画衔接时其中的精灵切换动画是否自然，因此我们更进一步，将各个动画状态原子化，拆分其中精灵切换与坐标改变的部分，并分别设置在不同的 `Layer` 中，不同的 `Layer` 相互独立，并可同时播放各自的动画，设置各自的叠加模式与权重，详情可参考[动画组件](${docs}animator)。
+经过拆解可以发现，如果我们简单地将动画分类为待机动画，飞行动画与坠落动画，考虑到待机的时候要播放精灵切换和上下缓动的动画，飞行的时候也需要播放精灵切换与抬头坠落的动画，他们重合的部分不仅会增加动画编辑时的工作量，还需要额外考虑这两个动画衔接时其中的精灵切换动画是否自然，因此我们更进一步，将各个动画状态原子化，拆分其中精灵切换与坐标改变的部分，并分别设置在不同的 `Layer` 中，不同的 `Layer` 相互独立，并可同时播放各自的动画，设置各自的叠加模式与权重，详情可参考[动画组件](${docs}animation-system)。
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*1cXjQIJAgZoAAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
 
@@ -568,7 +567,7 @@ class Pipe extends Script {
 可以看到，上方的逻辑就是对流程图的代码完善：
 
 - 当状态切换为 `Idle` 时，`Pipe._reset()` 函数被触发，场上所有的水管都被回收至池中
-- 当状态切换为 `Flying` 时，`Pipe._move()` 函数被触发，水管命运的齿轮开始转动，帧循环中判断是否需要生成新的水管，是否需要回收旧的水管，生成新水管使用了引擎自带的 [clone](${docs}entity-clone-cn) 能力，可以完整复刻节点的结构与组件。
+- 当状态切换为 `Flying` 时，`Pipe._move()` 函数被触发，水管命运的齿轮开始转动，帧循环中判断是否需要生成新的水管，是否需要回收旧的水管，生成新水管使用了引擎自带的 [clone](${docs}core-clone) 能力，可以完整复刻节点的结构与组件。
 - 当状态切换为 `Crash` 时，`Pipe._pause()` 函数被触发，水管停止移动。
 
 #### 地面

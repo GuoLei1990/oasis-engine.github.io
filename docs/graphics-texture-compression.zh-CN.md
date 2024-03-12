@@ -6,7 +6,7 @@ group: 纹理
 label: Graphics/Texture
 ---
 
-**[KTX2](https://www.khronos.org/ktx/)**(Khronos Texture Container version 2.0) 是 Khronos 推出最新的纹理压缩方案，Galacean 在 1.1 版本中已经支持。KTX2 会根据设备平台支持运行时转码到对应格式的压缩纹理(BC/PVRTC/ETC/ASTC)。
+**[KTX2](https://www.khronos.org/ktx/)**(Khronos Texture Container version 2.0) 是 Khronos 推出最新的纹理压缩方案，Galacean 自 1.1 版本开始已经支持。KTX2 会根据设备平台支持运行时转码到对应格式的压缩纹理(BC/PVRTC/ETC/ASTC)。
 
 ## 使用
 
@@ -31,7 +31,7 @@ KTX2 的生成可以使用：
 
 - toktx
 - basisu
-- 编辑器打包，可以参考『[项目发布](${docs}editor-publish-cn)』文档。
+- 编辑器打包，可以参考『[项目发布](${docs}interface-publish)』文档。
 
 ## 兼容性
 
