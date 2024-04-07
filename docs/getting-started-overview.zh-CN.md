@@ -79,16 +79,16 @@ import { OrbitControl } from " @galacean/engine-toolkit-controls";
 
 另外还有一些二方生态包，引入和使用方式和引擎工具包相同：
 
-| 功能                                                                             | 解释        | API                            |
-| :------------------------------------------------------------------------------- | :---------- | :----------------------------- |
-| [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine)   | Spine 动画  | [Doc](${doc}graphics-2d-spine) |
-| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie) | Lottie 动画 | [Doc](${doc}graphics-lottie)   |
+| 功能                                                                             | 解释        | API                             |
+| :------------------------------------------------------------------------------- | :---------- | :------------------------------ |
+| [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine)   | Spine 动画  | [Doc](${docs}graphics-2d-spine) |
+| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie) | Lottie 动画 | [Doc](${docs}graphics-lottie)   |
 
 ### 兼容性
 
 可以在支持 WebGL 的环境下运行，到目前为止，所有主流的移动端浏览器与桌面浏览器都支持这一标准。可以在 [CanIUse](https://caniuse.com/?search=webgl) 上检测运行环境的兼容性。
 
-此外，**Galacean Runtime** 还支持在[支付宝/淘宝小程序](${docs}interface-publish)中运行，同时也有开发者在社区贡献了[微信小程序/游戏的适配方案](https://github.com/deepkolos/platformize)。对于一些需要额外考虑兼容性的功能模块，当前的适配方案如下：
+此外，**Galacean Runtime** 还支持在[支付宝/淘宝小程序](${docs}assets-build)中运行，同时也有开发者在社区贡献了[微信小程序/游戏的适配方案](https://github.com/deepkolos/platformize)。对于一些需要额外考虑兼容性的功能模块，当前的适配方案如下：
 
 | 模块                            | 兼容考虑                                                 | 具体文档                                                                                |
 | :------------------------------ | :------------------------------------------------------- | :-------------------------------------------------------------------------------------- |

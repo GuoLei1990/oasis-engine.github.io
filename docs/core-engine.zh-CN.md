@@ -14,6 +14,7 @@ label: Core
   - [资源管理](${docs}assets-overall)
   - [物理系统](${docs}physics-overall)
   - [交互系统](${docs}input)
+  - [XR 系统](${docs}xr-overall)
 - **执行环境的上下文管理**：控制 WebGL 等执行环境的上下文管理。
 
 ## 初始化
@@ -28,7 +29,7 @@ const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 ### 渲染上下文
 
-开发者可以在 [导出界面](${docs}interface-publish) 设置上下文的渲染配置。
+开发者可以在 [导出界面](${docs}assets-build) 设置上下文的渲染配置。
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*WZHzRYIpUzQAAAAAAAAAAAAADhuCAQ/original" style="zoom:50%;" />
 
@@ -50,6 +51,10 @@ const engine = await WebGLEngine.create({
 ### 交互系统
 
 可参考 [交互系统](${docs}input) 文档
+
+### XR 系统
+
+可参考 [XR 系统](${docs}xr-overall) 文档
 
 ## 属性
 

@@ -13,13 +13,13 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 ### 创建和切换
 
-在 **[资产面板](${docs}interface-assets)** 右键（或资产面板右上角 + 号）创建场景，双击场景可以切换过去：
+在 **[资产面板](${docs}assets-interface)** 右键（或资产面板右上角 + 号）创建场景，双击场景可以切换过去：
 
-![Untitled](https://mdn.alipayobjects.com/rms/afts/img/A*3KX4QKXgZZAAAAAAAAAAAAAAARQnAQ/original/Untitled.gif)
+![scene-switch](https://gw.alipayobjects.com/zos/OasisHub/eef870a7-2630-4f74-8c0e-478696a553b0/2024-03-19%25252018.04.02.gif)
 
 ### 属性面板
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/0b263741-c368-45c4-8904-c066a345d567/image-20240221194134544.png" alt="image-20240221194134544" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/4cab176f-a274-4d97-a98d-334f6bc611ac/image-20240319180602935.png" alt="image-20240319180602935" style="zoom:50%;" />
 
 ### 环境光
 
@@ -37,7 +37,7 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 可以给整个场景增加 **线性、指数、指数平方** 3 种雾化：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/5a713502-18b2-45eb-af56-d6530a340581/fog.gif" alt="fog" style="zoom:100%;" />
+![Fog](https://gw.alipayobjects.com/zos/OasisHub/224fbc16-e60c-47ca-845b-5f7c09563c83/2024-03-19%25252018.08.23.gif)
 
 
 ## 脚本使用
